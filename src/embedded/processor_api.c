@@ -34,3 +34,5 @@ inline uint32_t read_char() {
 
     return result;
 }
+
+bool endless_loop_running = true;

@@ -4,6 +4,8 @@
 
 #ifdef __cplusplus
 extern "C" {
+#else
+#include <stdbool.h>
 #endif
 
 #define SENTINEL_KEYPRESSED_VALUE 255
@@ -21,6 +23,8 @@ void sleep_ms(uint32_t ms);
 void set_render_buffer_address(uint32_t* address);
 uint32_t read_char();
 void show_char(uint8_t character, uint16_t position, uint16_t foreground_color, uint16_t background_color);
+
+extern bool endless_loop_running;
 
 #ifdef __cplusplus
 }

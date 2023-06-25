@@ -4,10 +4,13 @@
 #include "common/processor_api.h"
 #include "simulated/RISCVSimulator.h"
 
-int main() {
-    std::thread render_thread([]() { simulator.run(); });
+bool endless_loop_running = true;
 
-    start();
+int main() {
+    std::thread render_thread(start);
+
+    simulator.run();
+    endless_loop_running = false;
 
     render_thread.join();
 }
