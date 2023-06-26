@@ -203,8 +203,7 @@ void ICMCProcessor::execute_cmp() {
 
 // Instruções de entrada e saída
 void ICMCProcessor::execute_inchar() {
-    rx() = keypressed_buffer & 0xffff;
-    keypressed_buffer = SENTINEL_KEYPRESSED_VALUE;
+    rx() = read_char() & 0xffff;
 }
 
 void ICMCProcessor::execute_outchar() {
@@ -336,17 +335,8 @@ uint16_t ICMCProcessor::fetch_next_word() {
 ICMCProcessor::ICMCProcessor(uint16_t *memory) : memory(memory) {}
 
 void ICMCProcessor::run() {
-    uint32_t prev_read_char = SENTINEL_KEYPRESSED_VALUE;
-
     while (endless_loop_running and !halt) {
-        uint32_t next_read_char = read_char();
-
-        if (prev_read_char == SENTINEL_KEYPRESSED_VALUE && next_read_char != SENTINEL_KEYPRESSED_VALUE) {
-            keypressed_buffer = next_read_char & 0xffff;
-        }
-
         execute_next_instruction();
-        prev_read_char = next_read_char;
     }
 }
 

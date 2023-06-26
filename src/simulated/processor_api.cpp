@@ -16,6 +16,8 @@ void set_render_buffer_address(uint32_t *address) {
 }
 
 uint32_t read_char() {
-    return simulator.keypressed_buffer;
+    auto tmp = simulator.keypressed_buffer;
+    simulator.keypressed_buffer = SENTINEL_KEYPRESSED_VALUE;
+    return tmp;
 }
 }
