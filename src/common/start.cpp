@@ -25,42 +25,6 @@ void show_text(const char *text, uint16_t position, uint16_t foreground_color, u
 extern "C" void start() {
     set_render_buffer_address(buffer);
 
-    // show_text("Allan", 0, 0xfff, 0x000);
-    // show_text("Natan", 0, 0xfff, 0x000);
-    // show_text("Simoes", 0, 0xfff, 0x000);
-
-    // while (true) {
-    //     show_text("Natan ", 0, 0xf00, 0x000);
-    //     sleep_ms(500);
-
-    //     show_text("Simoes", 0, 0x0f0, 0x000);
-    //     sleep_ms(500);
-
-    //     show_text("Allan ", 0, 0x00f, 0x000);
-    //     sleep_ms(500);
-    // }
-
-    // while (true) {
-    //     uint32_t current_char = read_char();
-    //     if (current_char == SENTINEL_KEYPRESSED_VALUE) {
-    //         current_char = '!';
-    //     }
-    //     show_char(current_char & 0xff, 0, 0xfff, 0);
-    // }
-
-    // char text[] = "Allan";
-
-    // while (true) {
-    //     for (char i = 0; text[i]; i++) {
-    //         show_char(text[i], i, 0xfff, 0xf00);
-    //         sleep_ms(16);
-    //     }
-    //     for (char i = 0; text[i]; i++) {
-    //         show_char(' ', i, 0xfff, 0);
-    //         sleep_ms(16);
-    //     }
-    // }
-
     ICMCProcessor icmc(icmc_ram);
     icmc.run();
 }
