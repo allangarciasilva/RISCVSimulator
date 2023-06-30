@@ -26,7 +26,7 @@ class RISCVSimulator {
     ~RISCVSimulator();
 
     void run();
-    int keypressed_buffer = SENTINEL_KEYPRESSED_VALUE;
+    uint32_t keypressed_buffer = SENTINEL_KEYPRESSED_VALUE;
 
    private:
     SDL_Window   *window   = nullptr;

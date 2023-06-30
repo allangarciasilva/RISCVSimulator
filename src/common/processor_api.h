@@ -19,7 +19,7 @@ typedef signed char char_t;
 typedef unsigned char uchar_t;
 
 void start();
-void sleep_ms(uint32_t ms);
+void sleep_us(uint32_t us);
 void set_render_buffer_address(uint32_t* address);
 uint32_t read_char();
 void show_char(uint8_t character, uint16_t position, uint16_t foreground_color, uint16_t background_color);

@@ -1,7 +1,6 @@
 #include "common/processor_api.h"
 
-inline void sleep_ms(uint32_t ms) {
-    unsigned us = ms * 1000;
+inline void sleep_us(uint32_t us) {
     asm volatile(
         "li a7, %[ecall_number]\n\t"
         "mv a0, %[operand]\n\t"

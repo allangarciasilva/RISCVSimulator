@@ -71,11 +71,6 @@ void RISCVSimulator::run() {
                     break;
                 case SDL_KEYDOWN:
                     keypressed_buffer = e.key.keysym.sym;
-                    printf("SDL_KEYDOWN %d\n", keypressed_buffer);
-                    break;
-                case SDL_KEYUP:
-                    keypressed_buffer = SENTINEL_KEYPRESSED_VALUE;
-                    printf("SDL_KEYUP   %d\n", keypressed_buffer);
                     break;
             }
         }

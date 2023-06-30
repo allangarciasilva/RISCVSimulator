@@ -27,4 +27,13 @@ extern "C" void start() {
 
     ICMCProcessor icmc(icmc_ram);
     icmc.run();
+
+    int cnt = 0;
+    while (endless_loop_running) {
+        uint32_t current_char = read_char();
+        if (current_char != SENTINEL_KEYPRESSED_VALUE) {
+            show_char(current_char & 0xff, cnt++, 0x0f0, 0x00f);
+        }
+        sleep_us(1);
+    }
 }

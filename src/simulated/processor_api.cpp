@@ -7,8 +7,8 @@
 #include "simulated/RISCVSimulator.h"
 
 extern "C" {
-void sleep_ms(uint32_t ms) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+void sleep_us(uint32_t us) {
+    std::this_thread::sleep_for(std::chrono::microseconds(us));
 }
 
 void set_render_buffer_address(uint32_t *address) {
